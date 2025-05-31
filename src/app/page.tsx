@@ -10,12 +10,10 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Footer from "@/components/Footer";
-import Provider from "@/lib/provider/Provider";
 
 export default function Home() {
   return (
-    <Provider>
-    <div className="w-full min-h-screen bg-[#191818] text-white flex flex-col">
+    <div className=" w-full min-h-screen flex flex-col">
       <div className="flex-grow flex flex-col items-center justify-center px-4">
         <TextLoop className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 md:mb-8">
           <h1 style={{ fontFamily: "var(--font-philosopher)" }}>
@@ -33,16 +31,20 @@ export default function Home() {
         </TextLoop>
 
         {/* Search Container */}
-        <div className="border border-gray-700 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl bg-[#1e1e1e] rounded-2xl p-3">
+        <div
+        style={{
+          backgroundColor: "background",
+        }}
+        className=" border border-card w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl rounded-2xl p-3 ">
           {/* Search Input and Buttons */}
           <div className="relative">
             <Textarea
               placeholder="Example: Illustrate sine function"
-              className="flex-grow bg-transparent border-none focus-visible:ring-0 focus-visible:ring-offset-0 resize-none font-medium sm:text-lg text-gray-300 placeholder:text-gray-400 min-h-[100px] py-2 px-2"
+              className="overflow-hidden h-auto flex-grow border-none focus-visible:ring-0 focus-visible:ring-offset-0 resize-none font-medium sm:text-lg text-gray-300 min-h-[100px] py-2 px-2"
               style={{
-                overflow: "hidden",
-                height: "auto",
+                backgroundColor: "background",
               }}
+              
               onInput={(e) => {
                 const target = e.target as HTMLTextAreaElement;
                 target.style.height = "auto";
@@ -56,7 +58,7 @@ export default function Home() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button className="p-1.5 sm:p-2 rounded-md flex-shrink-0 bg-transparent hover:cursor-pointer hover:bg-neutral-800">
+                    <Button variant="ghost" className="p-1.5 sm:p-2 rounded-md flex-shrink-0 hover:cursor-pointer">
                       <Sparkles />
                     </Button>
                   </TooltipTrigger>
@@ -67,7 +69,7 @@ export default function Home() {
               </TooltipProvider>
 
               {/* Enter Button */}
-              <Button className="p-1.5 sm:p-2 rounded-md flex-shrink-0 hover:cursor-pointer hover:bg-neutral-800">
+              <Button className="p-1.5 sm:p-2 rounded-md flex-shrink-0 hover:cursor-pointer ">
                 <ArrowUp />
               </Button>
             </div>
@@ -78,6 +80,5 @@ export default function Home() {
       {/* Footer */}
       <Footer />
     </div>
-    </Provider>
   );
 }

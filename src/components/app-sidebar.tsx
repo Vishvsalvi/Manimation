@@ -13,7 +13,6 @@ import {
   SidebarHeader,
 } from "@/components/ui/sidebar"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { UserButton, SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs"
 
 
@@ -49,7 +48,7 @@ const items = [
 export function AppSidebar() {
  
   return (
-    <Sidebar>
+    <Sidebar className="border-none">
         <SidebarHeader>
             <div className="flex items-center gap-2">
                 <img src="/Logo.png" alt="logo" width={50} height={50} />

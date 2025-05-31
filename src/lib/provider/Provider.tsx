@@ -6,6 +6,7 @@ import {
 } from "@clerk/nextjs";
 
 import { dark } from "@clerk/themes";
+import { ThemeProvider } from "@/components/theme-provider";
 
 type Props = {
   children: React.ReactNode;
@@ -13,6 +14,12 @@ type Props = {
 
 const Provider = ({ children }: Props) => {
   return (
+    <ThemeProvider
+    attribute="class"
+    defaultTheme="system"
+    enableSystem
+    disableTransitionOnChange
+    >
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <SidebarProvider>
         <AppSidebar />
@@ -20,6 +27,7 @@ const Provider = ({ children }: Props) => {
         {children}
       </SidebarProvider>
     </ClerkProvider>
+    </ThemeProvider>
   );
 };
 

@@ -20,12 +20,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.7.0
- * Query Engine version: 3cff47a7f5d65c3ea74883f1d736e41d68ce91ed
+ * Prisma Client JS version: 6.8.2
+ * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
  */
 Prisma.prismaVersion = {
-  client: "6.7.0",
-  engine: "3cff47a7f5d65c3ea74883f1d736e41d68ce91ed"
+  client: "6.8.2",
+  engine: "2060c79ba17c6bb9f5823312b6f6b7f4a845738e"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -120,13 +120,11 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.UserScalarFieldEnum = {
+exports.Prisma.ChatScalarFieldEnum = {
   id: 'id',
-  email: 'email',
-  name: 'name',
-  image: 'image',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  user: 'user'
 };
 
 exports.Prisma.MessageScalarFieldEnum = {
@@ -138,13 +136,6 @@ exports.Prisma.MessageScalarFieldEnum = {
   chatId: 'chatId'
 };
 
-exports.Prisma.ChatScalarFieldEnum = {
-  id: 'id',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  userId: 'userId'
-};
-
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -154,20 +145,14 @@ exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
-
-exports.Prisma.NullsOrder = {
-  first: 'first',
-  last: 'last'
-};
 exports.MessageType = exports.$Enums.MessageType = {
   USER: 'USER',
   ASSISTANT: 'ASSISTANT'
 };
 
 exports.Prisma.ModelName = {
-  User: 'User',
-  Message: 'Message',
-  Chat: 'Chat'
+  Chat: 'Chat',
+  Message: 'Message'
 };
 
 /**
