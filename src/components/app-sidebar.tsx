@@ -48,7 +48,7 @@ const items = [
 export function AppSidebar() {
  
   return (
-    <Sidebar className="border-none">
+    <Sidebar>
         <SidebarHeader>
             <div className="flex items-center gap-2">
                 <img src="/Logo.png" alt="logo" width={50} height={50} />
